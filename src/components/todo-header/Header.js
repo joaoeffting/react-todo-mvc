@@ -17,4 +17,8 @@ class Header extends React.Component {
     }
 }
 
+Header.propTypes = {
+    addTask : React.PropTypes.func,
+}
+
 export default Header;
