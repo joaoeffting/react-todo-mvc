@@ -3,21 +3,6 @@ import Header from './todo-header/Header';
 import Footer from './todo-footer/Footer';
 import Container from './todo-container/Container';
 
-const todo_list = [
-    {
-        nome: "Estudar React",
-        completa: false,
-    },
-    {
-        nome: "Estudar Atomic Design",
-        completa: true,
-    },
-    {
-        nome: "Estudar HTML",
-        completa: true,
-    },
-]
-
 class TodoMvc extends React.Component {
     constructor() {
         super();
