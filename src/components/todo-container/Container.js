@@ -18,7 +18,7 @@ class Container extends React.Component {
                 <div id={key} className="panel-body">
                     <div className="panel panel-default">
                         <div className="panel-body">
-                            <input type="checkbox" defaultChecked={todo.completa} onClick={() => {this.marcarTask(todo.id,todo.completa)}}/>
+                            <input type="checkbox" checked={todo.completa} onChange={() => {this.marcarTask(todo.id,todo.completa)}}/>
                             <span> {todo.nome} </span> 
                             <a href="#" onClick={() => {this.removerTask(todo.id)}}>
                                 <span className="glyphicon glyphicon-remove-circle" aria-hidden="true" value="teste"></span>
