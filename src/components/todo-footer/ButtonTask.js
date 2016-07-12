@@ -12,4 +12,9 @@ class ButtonTask extends React.Component {
     }
 }
 
+ButtonTask.propTypes = {
+    nome: React.PropTypes.string.isRequired,
+    quantidade: React.PropTypes.number.isRequired,
+}
+
 export default ButtonTask;

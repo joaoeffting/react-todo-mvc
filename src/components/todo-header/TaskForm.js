@@ -11,6 +11,7 @@ class TaskForm extends React.Component {
             nome: this.refs.task.value,
             completa: false
         });
+        this.refs.task.value = "";
     }
     render() {
         return(
@@ -23,10 +24,13 @@ class TaskForm extends React.Component {
                         placeholder="Digite uma tarefa"
                     />
                 </div>
-                <button type="submit">Adicionar </button>
             </form>
         );
     }
+}
+
+TaskForm.propTypes = {
+    addTask: React.PropTypes.func.isRequired,
 }
 
 export default TaskForm;

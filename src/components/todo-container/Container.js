@@ -15,7 +15,7 @@ class Container extends React.Component {
         const container = this.props.todos.map((todo, key) => {
             
             return (            
-                <div id={key} className="panel-body">
+                <div key={key} className="panel-body">
                     <div className="panel panel-default">
                         <div className="panel-body">
                             <input type="checkbox" checked={todo.completa} onChange={() => {this.marcarTask(todo.id,todo.completa)}}/>
@@ -34,6 +34,12 @@ class Container extends React.Component {
             </div>
         );
     }
+}
+
+Container.propTypes = {
+    todos: React.PropTypes.array.isRequired,
+    removerTask: React.PropTypes.func.isRequired,
+    marcarTask: React.PropTypes.func.isRequired,
 }
 
 export default Container;

@@ -27,4 +27,8 @@ class ListaTask extends React.Component {
     }
 }
 
+ListaTask.propTypes = {
+    todos: React.PropTypes.array.isRequired,
+}
+
 export default ListaTask;
