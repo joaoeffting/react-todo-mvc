@@ -23,11 +23,17 @@ class TodoMvc extends React.Component {
                     nome: "Estudar HTML",
                     completa: true,
                 },
-            ]
+            ],
+            filter: "TODAS",
         }
         this.addTask = this.addTask.bind(this);
         this.removerTask = this.removerTask.bind(this);
         this.marcarTask = this.marcarTask.bind(this);
+        this.filterTask = this.filterTask.bind(this);
+    }
+
+    filterTask(filter) {
+        this.setState({filter: filter});
     }
 
    addTask(task) {
@@ -74,9 +80,12 @@ class TodoMvc extends React.Component {
                         todos={this.state.todo_list}
                         removerTask={this.removerTask}
                         marcarTask={this.marcarTask}
+                        filter={this.state.filter}
                     />                    
                     <Footer
                         todos={this.state.todo_list}
+                        filterTask={this.filterTask}
+                        filter={this.state.filter}
                     />
                 </div>
             </div>

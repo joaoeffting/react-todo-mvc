@@ -5,7 +5,11 @@ class Footer extends React.Component {
     render() {
         return(
             <div className="panel-footer">
-                <ListaTask todos={this.props.todos}/>
+                <ListaTask 
+                    todos={this.props.todos} 
+                    filterTask={this.props.filterTask}
+                    filter={this.props.filter}
+                />
             </div>
         );
     }

@@ -1,10 +1,28 @@
 import React from 'react';
 
 class ButtonTask extends React.Component {
+    constructor() {
+        super();
+        this.onFiltering = this.onFiltering.bind(this);
+        this.classAtiva = this.classAtiva.bind(this);
+    }
+
+    onFiltering() {
+        this.props.filterTask(this.props.filter);
+    }
+
+    classAtiva() {
+        return this.props.filter == this.props.filterBy;
+    }
+
     render() {
+        let classActive = "";
+        if (this.classAtiva()) {
+            classActive = "active";
+        }
         return(
-            <li className="active">
-                <a href="#"> {this.props.nome} 
+            <li className={this.classActive}>
+                <a href="#" onClick={this.onFiltering}> {this.props.nome} 
                     <span className="badge">{this.props.quantidade}</span>
                 </a>
             </li>

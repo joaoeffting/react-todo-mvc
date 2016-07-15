@@ -13,14 +13,23 @@ class ListaTask extends React.Component {
                 <ButtonTask
                     nome="Todas"
                     quantidade={this.props.todos.length}
+                    filterTask={this.props.filterTask}
+                    filter="TODAS"
+                    filterBy={this.props.filter}
                 />
                 <ButtonTask
                     nome="Completas"
                     quantidade={quantidadeCompletas.length}
+                    filterTask={this.props.filterTask}
+                    filter="COMPLETAS"
+                    filterBy={this.props.filter}
                 />
                 <ButtonTask
                     nome="Faltam"
                     quantidade={quantidadeFaltam.length}
+                    filterTask={this.props.filterTask}
+                    filter="FALTAM"
+                    filterBy={this.props.filter}
                 />
             </ul>
         );

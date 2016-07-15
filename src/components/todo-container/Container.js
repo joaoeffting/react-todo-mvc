@@ -12,9 +12,23 @@ class Container extends React.Component {
         this.props.marcarTask(id, completa);
     }
     render() {
-        const container = this.props.todos.map((todo, key) => {
-            
-            return (            
+        let {filter} = this.props;
+        const tasks = this.props.todos.filter((todo, key) => {
+            if (filter =="COMPLETAS") {
+                if (todo.completa) {
+                    return todo;
+                }
+            } else if (filter =="FALTAM") {
+                if (!todo.completa) {
+                    return todo;
+                }
+            }else {
+                return todo;
+            }
+        });
+        
+        const container = tasks.map((todo, key) => {            
+            return (                            
                 <div key={key} className="panel-body">
                     <div className="panel panel-default">
                         <div className="panel-body">
